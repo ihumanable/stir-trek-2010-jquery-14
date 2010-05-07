@@ -720,6 +720,163 @@ $('#notice').fadeIn().delay(3000).fadeOut();
         </div>
 
         <div class="slide">
+          <script type="text/javascript">
+          function cqStart() {
+            $('#cqTarget')
+              .slideDown()
+              .slideUp()
+              .slideDown()
+              .slideUp()
+              .slideDown()
+              .slideUp()
+              .slideDown()
+              .slideUp()
+              .slideDown();
+          }
+          
+          function cqStop() {
+            $('#cqTarget').stop(true);
+          }
+          
+          function cqClearQueue() {
+            $('#cqTarget').clearQueue();
+          }
+          
+          function cqReset() {
+            $('#cqTarget').animate({width: '300px', height: '300px'}, 0);
+          }
+          
+          </script>
+          <style type="text/css">
+          #cqTarget {
+            border: 10px solid black;
+            height: 300px;
+            width: 300px; 
+          }
+          </style>
+          <header>
+            <h1>clearQueue: animation anti-lock brakes</h1>
+          </header>
+          <section>
+            <pre>
+$('#cqTarget').clearQueue();
+            </pre>
+            <button onclick="cqStart()">Start</button>
+            <button onclick="cqStop()">Stop</button>
+            <button onclick="cqClearQueue()">Clear Queue</button>
+            <button onclick="cqReset()">Reset</button>
+            <div id="cqTarget"></div>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Enough shiny</h1>
+              <h2>Let's talk multi-bind</h2>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide">
+          <script type="text/javascript">
+            $(function() {
+              $('#multi-bind').bind({
+                click: function() {
+                  $(this).text('Mouse Clicked');
+                },
+                mouseenter: function() {
+                  $(this).text('Mouse Entered');
+                },
+                mouseleave: function() {
+                  $(this).text('Mouse Left');
+                }
+              });
+            });  
+          </script>
+          <header>
+            <h1>Seriously, write less, do more</h1>
+          </header>
+          <section>
+            <pre>
+$('#multi-bind').bind({
+  click: function() {
+    $(this).text('Mouse Clicked');
+  },
+  mouseenter: function() {
+    $(this).text('Mouse Entered');
+  },
+  mouseleave: function() {
+    $(this).text('Mouse Left');
+  }
+});
+            </pre>
+            <div id="multi-bind">I'm bound to lot's of things</div>
+        </div>
+
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Last but not least</h1>
+            </hgroup>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <script type="text/javascript">
+            function appendElem() {
+              var div = $("<div/>", {
+                id: 'example',
+                css: {
+                  height: '100px',
+                  width:  '100px',
+                  color:  'blue',
+                  backgroundColor: 'green'
+                },
+                click: function() {
+                  $(this).css('backgroundColor', 'red');
+                }
+              });
+              $('#element-area').append(div);
+            }
+          </script>
+          <header>
+            <h1>New Element Creation syntax</h1>
+          </header>
+          <section>
+            <pre>
+var div = $('&lt;div/&gt;', {
+  id: 'example',
+  css: {
+    height: '100px',
+    width:  '100px',
+    color:  'blue',
+    backgroundColor: 'green'
+  },
+  click: function() {
+    $(this).css('backgroundColor', 'red');
+  }
+});          
+// &lt;div id="example" 
+//      style="height: 100px; width: 100px; color: blue; background: green"
+//      onclick="$(this).css('backgroundColor', 'red');"&gt;
+            </pre>
+            <button onclick="appendElem()">Append it</button>
+            <div id="element-area">
+            </div>
+          </section>
+        </div>    
+
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Thank you</h1>
+              <h2>Go get your jQuery on</h2>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide">
           <section class="center intro">
             <hgroup>
               <h1>Fork Me</h1>
