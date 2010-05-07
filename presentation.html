@@ -7,6 +7,7 @@
     <title>jQuery 1.4: What you need to know</title>
     <link rel="stylesheet" type="text/css" href="style/main.css" media="screen, projection" />
     <script type="text/javascript" src="script/jquery-1.4.2.js"></script>    
+    <script type="text/javascript" src="script/jquery-easing-1.3.js"></script>
     <script type="text/javascript">
       function show(text, target) {
         var out = $('#' + target);
@@ -45,6 +46,7 @@
               <hr/>
               <li>5 years experience in Web Design</li>
               <li>Using jQuery for the last 3.5 years</li>
+              <li>First: Credit where credit is due</li>
             </ul> 
           </section>
         </div>    
@@ -52,10 +54,16 @@
         <div class="slide">
           <section class="center intro">
             <hgroup>
-              <h1>Paul Irish: jQuery 1.4 Hawtness</h1>
-              <br />
-              <h2><a href="http://jquery14.com">http://jQuery14.com</a></h2>
+              <h3>Paul Irish: jQuery 1.4 Hawtness</h3>
+              <h3><a href="http://jquery14.com">http://jQuery14.com</a></h3>
             </hgroup>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <section class="center intro">
+            <h3>HTML5 presentation</h3>
+            <h4><a href="http://apirocks.com/html5/html5.html">http://apirocks.com/html5/html5.html</a></h4>
           </section>
         </div>
         
@@ -537,6 +545,186 @@ $('a.setter').attr('href', function() {
   $(this).attr('href', newhref);                        
 });
             </pre>
+            <div>Works fine, kind of cumbersome</div>
+            <div>If only there were a better way...</div>
+          </section>
+        </div>
+                                       
+        <div class="slide">
+          <header>
+            <h1>New Rocket Sauce in 1.4</h1>
+          </header>
+          <section>
+            <pre>
+$('a.setter').attr('href', function(i, href) {
+  return href + '?' + new Date();
+});
+            </pre>
+            <div>Compare with</div>
+            <pre>
+$('a.setter').attr('href', function() {
+  var newhref = $(this).attr('href') + '?' + new Date();
+  $(this).attr('href', newhref);                        
+});
+            </pre>
+          </section>       
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>What now?!</h1>
+          </header>
+          <section>
+            <pre>
+$('a.setter').attr('href', function(<span class="js">i</span>, <span class="html">href</span>) {
+  <span class="css">return href + '?' + new Date()</span>;
+});
+            </pre>
+            <div>The function is now passed an <span class="js">index</span> and the <span class="html">current value</span></div>
+            <div>The attribute is set to the <span class="css">return value</span></div>
+            <br />
+            <div>Rocket Sauce</div>
+          </section>       
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>Setters with Current Value</h1>
+          </header>
+          <section>
+            <ul class="bullets" style="float: left">
+              <li>.css()</li>
+              <li>.attr()</li>
+              <li>.val()</li>
+              <li>.html()</li>
+              <li>.text()</li>
+              <li>.append()</li>
+            </ul>
+            <ul class="bullets" style="float: left; margin-left: 80px">
+              <li>.prepend()</li>
+              <li>.offset()</li>
+              <li>.addClass()</li>
+              <li>.removeClass()</li>
+              <li>.toggleClass()</li>
+            </ul>
+          </section>
+        </div>
+                                       
+        <div class="slide">
+          <header>
+            <h1>Setters without Current Value</h1>
+          </header>
+          <section>
+            <ul class="bullets">
+              <li>.before()</li>
+              <li>.after()</li>
+              <li>.replaceWith()</li>
+              <li>.wrap()</li>
+              <li>.wrapInner()</li>
+            </ul>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>One more example</h1>
+          </header>
+          <section>
+            <pre>
+$('a').html(function(i, html) {
+  return html.replace( /&amp;amp;/gi, '&lt;span class="amp"&gt;&amp;amp;&lt;/span&gt;');
+});
+            </pre>
+            <div>Wrap all &amp;'s with span tags to allow for styling</div>
+          </section>
+        </div>
+        
+        <div class="slide">
+        	<section class="center intro">
+        		<hgroup>
+              <h1>Time for some shiny</h1>
+              <br /><br />
+              <h1>ANIMATIONS!</h1>
+            </hgroup>
+        	</section>
+        </div>
+
+        <div class="slide">
+          <script type="text/javascript">
+            function animateBothLinear() {
+              $('#animateTarget').animate({width: "+=200px", height: "+=200px"}, 1000, "linear");
+            }
+            
+            function animateBothBounce() {
+              $('#animateTarget').animate({width: "+=200px", height: "+=200px"}, 1000, "easeOutBounce");
+            }
+            
+            function animatePerProperty() {
+              $('#animateTarget').animate({width: ["+=200px", "linear"], height: ["+=200px", "easeOutBounce"]}, 1000);
+            }
+            
+            function animateReset() {
+              $('#animateTarget').animate({width: 100, height: 100}, 0);
+            }
+          </script>
+          <style type="text/css">
+            div#animateTarget {
+              height: 100px;
+              width: 100px;
+              border: 10px solid black;
+            }
+          </style>
+          <header>
+            <h1>Per-property easing</h1>
+          </header>
+          <section>
+            <pre>
+$('#animateTarget').animate({
+    width: ["+=200px", "linear"], 
+    height: ["+=200px", "easeOutBounce"]
+  }, 1000);        
+            </pre>
+            <button onclick="animateBothLinear()">Both Linear</button>
+            <button onclick="animateBothBounce()">Both Bounce</button>
+            <button onclick="animatePerProperty()">Per Property</button>
+            <button onclick="animateReset()">Reset</button>
+            <div id="animateTarget"></div>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <script type="text/javascript">
+            function showNotice() {
+              $('#notice').fadeIn().delay(3000).fadeOut();
+            }          
+          </script>
+          <style type="text/css">
+            div#notice {
+              display: none;
+              width: 290px;
+              height: 70px;
+              background: white;
+              border: 4px solid black;
+            }
+          </style>
+          <header>
+            <h1>New $.delay API</h1>
+          </header>
+          <section>
+            <pre>
+$('#notice').fadeIn().delay(3000).fadeOut();
+            </pre>
+            <button onclick="showNotice()">Show Notice</button>
+            <div id="notice">I'm the notice!</div>
+          </section>                 
+        </div>
+
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Fork Me</h1>
+              <h3><a href="http://github.com/ihumanable/stir-trek-2010-jquery-14">http://github.com/ihumanable</a></h3>
+            </hgroup>
           </section>
         </div>
         
