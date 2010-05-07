@@ -541,7 +541,7 @@ $('a.example', $('#live-context-area')[0]).live('click', function() {
           <section>
             <pre>
 $('a.setter').attr('href', function() {
-  var newhref = $(this).attr('href') + '?' + new Date();
+  var newhref = $(this).attr('href') + '?' + +new Date();
   $(this).attr('href', newhref);                        
 });
             </pre>
@@ -557,13 +557,13 @@ $('a.setter').attr('href', function() {
           <section>
             <pre>
 $('a.setter').attr('href', function(i, href) {
-  return href + '?' + new Date();
+  return href + '?' + +new Date();
 });
             </pre>
             <div>Compare with</div>
             <pre>
 $('a.setter').attr('href', function() {
-  var newhref = $(this).attr('href') + '?' + new Date();
+  var newhref = $(this).attr('href') + '?' + +new Date();
   $(this).attr('href', newhref);                        
 });
             </pre>
@@ -577,7 +577,7 @@ $('a.setter').attr('href', function() {
           <section>
             <pre>
 $('a.setter').attr('href', function(<span class="js">i</span>, <span class="html">href</span>) {
-  <span class="css">return href + '?' + new Date()</span>;
+  <span class="css">return href + '?' + +new Date()</span>;
 });
             </pre>
             <div>The function is now passed an <span class="js">index</span> and the <span class="html">current value</span></div>
