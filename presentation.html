@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+    <title>jQuery 1.4: What you need to know</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css" media="screen, projection" />
+    <script type="text/javascript" src="script/jquery-1.4.2.js"></script>    
+    <script type="text/javascript">
+      function show(text, target) {
+        var out = $('#' + target);
+        out.hide();
+        out.html(text);
+        out.fadeIn();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="presentation">
+      <div class="slides">
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>
+                jQuery 1.4
+              </h1>
+              <h2>
+                What you need to know
+              </h2>
+            </hgroup>
+            <p class="quiet">This presentation is an HTML5 website</p>
+          </section>
+        </div>
+                
+        <div class="slide">
+          <header>
+            <h1>Who are you?</h1>
+          </header>
+          <section>
+            <ul class="bullets">
+              <li>Matt Nowack</li>
+              <li>Associate Consultant</li>
+              <li>HMB Information System Developers</li>
+              <hr/>
+              <li>5 years experience in Web Design</li>
+              <li>Using jQuery for the last 3.5 years</li>
+            </ul> 
+          </section>
+        </div>    
+        
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Paul Irish: jQuery 1.4 Hawtness</h1>
+              <br />
+              <h2><a href="http://jquery14.com">http://jQuery14.com</a></h2>
+            </hgroup>
+          </section>
+        </div>
+        
+        <div class="slide">
+        	<header>
+        		<h1>jQuery History</h1>
+        	</header>
+        	<section>
+            <ul class="bullets">
+        			<li>Created by John Resig in 2006</li>
+        			<li>Lightweight, cross-browser JavaScript Library.</li>
+        			<li>Used by 30% of the Top 10,000 sites<a href="http://trends.builtwith.com/javascript/JQuery"><sup>1</sup></a></li>
+        		</ul>
+        		<img src="img/john-resig.png" style="float:right"/>
+        	</section>
+        </div>
+          
+        <div class="slide">
+        	<header>
+        		<h1>Who's using jQuery</h1>
+        	</header>
+        	<section>
+        		<ul class="bullets">
+        			<li>Microsoft ships jQuery with Visual Studio to support ASP.NET MVC</li>
+        			<li>Nokia uses jQuery with their widget platform</li>
+        			<li>Smalltalk's Seaside framework fully integrates jQuery</li>
+        			<li>Ruby on Rails is compatible with jQuery</li>
+        			<li>and many many more...</li>
+        		</ul>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+            <hgroup>
+          		<h1>Who Else?</h1>
+          	</hgroup>
+          </section>
+        </div>
+          
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/google.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/nbc.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+          
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/drupal.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/mlb.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/dell.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/cbs.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/technorati.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/wordpress.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/digg.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/netflix.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/bofa.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1><img src="img/logo/mozilla.png" /></h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<section class="intro center">
+        		<hgroup>
+        			<h1>jQuery 1.4 <br /> == <br /> Awesome to the Max</h1>
+        		</hgroup>
+        	</section>
+        </div>  
+        
+        <div class="slide">
+        	<header>
+        		<h1>Internal Changes</h1>
+        	</header>
+        	<section>
+            <ul class="bullets">
+        			<li>Tons of internal cleanup</li>
+        			<li>YUI Min <strong>OUT</strong>, Closure Compiler <strong>IN</strong></li>
+        			<li>Fragment Caching</li>
+        			<li>Pervasive Context</li>
+        		</ul>
+        	</section>
+        </div>
+
+        <div class="slide">
+        	<header>
+        		<h1>Modularization</h1>
+        	</header>
+          <section>
+          	<ul class="bullets">
+          		<li>Reduction of Interdependencies</li>
+          		<li>core is heading towards kernal</li>
+          		<li>$.ready moved to core</li>
+          	</ul>
+          </section>        	
+        </div>
+        
+        <div class="slide">
+        	<header>
+        		<h1>Minification</h1>
+        	</header>
+        	<section>
+        		<ul class="bullets">
+        			<li>YUI Minifier was replaced starting in 1.4</li>
+        			<li>Replaced by Google's Closure Compiler</li>
+        			<li>13% decrease in minified filesize</li>
+        		</ul>
+        	</section>
+        </div>
+        
+        <div class="slide">
+        	<header>
+        		<h1>Performance</h1>
+        	</header>
+        	<section>
+        		<ul class="bullets">
+        			<li>DOM Fragment Caching</li>
+        			<li>Pervasive use of context</li>
+        			<li>Internal helper methods and restructuring</li>
+        		</ul>
+        	</section>
+        </div>
+        
+        <div class="slide">
+        	<section class="intro center">
+            <hgroup>
+        	   <h1>New Stuff</h1>
+        	   <h2>Let's jump into some new features</h2>
+            </hgroup>
+        	</section>
+        </div>
+        
+        <div class="slide">
+        	<header>
+        		<h1>Improvements to $.live()</h1>
+        	</header>
+          <section>
+          	<ul class="bullets">
+          		<li>$.live() was introduced in version 1.3</li>
+          		<li>Similar to $.bind() but using dynamic event delegation</li>
+          		<li>Efficient and concise way to provide client-side interaction</li>
+          	</ul>
+          </section>
+        </div>
+        
+        <div class="slide">
+        	<script type="text/javascript">
+        	 $(function() {
+            $('select.example').live('change', function(e) {
+              show( 'Value changed to ' + $(this).val(), 'live-change-console' );
+            });           
+           });
+           
+           function appendLiveChange() {
+            $('div#live-change-area').append('<select class="example"><option>A</option><option>B</option><option>C</option></select>');
+           }
+          </script>
+          <header>
+        		<h1>Support for the "change" event</h1>
+        	</header>
+        	<section>
+            <pre>
+$('select.example').live('change', function(e) {
+  show( 'Value changed to ' + $(this).val(), 'live-change-console' );
+});
+            </pre>
+            <button onclick="appendLiveChange()">New Dropdown</button>
+            <div id="live-change-area">
+              <select class="example">
+                <option>Example</option>
+                <option>Sample</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div id="live-change-console">
+            </div>
+        	</section>
+        </div>
+        
+        <div class="slide">
+          <script type="text/javascript">
+            $(function() {
+              $('form.example').live('submit', function(e) {
+                show( e.target + ' has submitted', 'live-submit-console' );
+                return false;              
+              })
+            });
+          
+            function appendLiveSubmit() {
+              $('#live-submit-area').append('<form class="example"><input type="submit" value="me too" /></form>');              
+            }
+          </script>
+        	<header>
+        		<h1>Support for the "submit" event</h1>
+        	</header>
+        	<section>
+        		<pre>
+$('form.example').live('submit', function(e) {
+     show( e.target + ' has submitted', 'live-submit-console' );
+     return false;
+});            
+            </pre>
+            <button onclick="appendLiveSubmit()">New Form</button>
+            <div id="live-submit-area">
+              <form class="example">
+                <input type="submit" value="click me" />
+              </form>
+            </div>
+            <div id="live-submit-console">
+            </div>
+         	</section>
+        </div>
+        
+        <div class="slide">
+        	<script type="text/javascript">
+            $(function() {
+              $('input:text.example').live('focusout', function() {
+                  $(this).css('border', '10px dashed red');
+              });
+              
+              $('input:text.example').live('focusin', function() {
+                  $(this).css('border', 'none');
+              });
+            });
+            
+            function appendLiveFocus() {
+              $('#live-focus-area').append('<input class="example" type="text" />');
+            }
+          </script>
+          <header>
+        		<h1>Support for "focusin" and "focusout"</h1>
+        	</header>
+          <section>
+            <pre>
+$('input:text.example').live('focusout', function() {
+    $(this).css('border', '10px dashed red');
+});
+
+$('input:text.example').live('focusin', function() {
+    $(this).css('border', 'none');
+});
+            </pre>
+            <button onclick="appendLiveFocus()">New Textbox</button>
+            <div id="live-focus-area">
+              <input class="example" type="text" />
+            </div>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <script type="text/javascript">
+            $(function() {
+              $('div.hoverbox').live('mouseenter', function(e) {
+                $(this).css('backgroundColor', 'red');
+              });
+              $('div.hoverbox').live('mouseleave', function(e) {
+                $(this).css('backgroundColor', 'blue');
+              });        	         	 
+            });
+            
+            function addLiveMouse() {
+              $('#live-mouse-area').append('<div class="hoverbox"></div>');
+            } 
+          </script>
+          <style type="text/css">
+            div.hoverbox {
+              height: 100px;
+              width: 100px;
+              border: 5px solid black;
+              margin: 20px;
+              float: left;
+            }
+          </style>
+        	<header>
+        		<h1>Support for "mouseenter" and "mouseleave"</h1>
+        	</header>
+        	<section>
+        	 <pre>
+$('div.hoverbox').live('mouseenter', function(e) {
+  $(this).css('backgroundColor', 'red');
+});
+$('div.hoverbox').live('mouseleave', function(e) {
+  $(this).css('backgroundColor', 'blue');
+});        	 
+        	 </pre>
+        	</section>
+        	<button onclick="addLiveMouse()">New Hoverbox</button>
+        	<div id="live-mouse-area">
+        	 <div class="hoverbox"></div>
+        	</div>
+        </div>
+        
+        <div class="slide">
+        	<script type="text/javascript">
+            $(function() {
+              $('p.example').live('myCustomEvent', function(e) {
+                $(this).text("Hi there!");
+              });
+            });
+            
+            function addLiveCustom() {
+              $('#live-custom-area').append('<p class="example">Yet Another Example</p>');
+            }        	                                   
+          </script>
+          <header>
+        		<h1>Support for custom events</h1>
+        	</header>
+        	<section>
+            <pre>
+$('p.example').live('myCustomEvent', function(e) {
+  $(this).text("Hi there!");
+});
+
+&lt;button onclick="$('p.example').trigger('myCustomEvent');"&gt;Trigger&lt;/button&gt;
+
+            </pre>
+            <button onclick="$('p.example').trigger('myCustomEvent');">Trigger</button>
+            <button onclick="addLiveCustom()">New Paragraph</button>
+            <div id="live-custom-area">
+              <p class="example">Example &lt;p&gt;</p>
+            </div>
+            <span></span>
+        	</section>
+        </div>
+        
+        <div class="slide">
+        	<script type="text/javascript">
+            $(function() {
+              $('a.example', $('#live-context-area')[0]).live('click', function() { 
+                show( 'Hello', 'live-context-console'); 
+              });
+            });
+            
+            function addLiveContext() {
+              $('#live-context-area').append('<br /><a class="example">Another Anchor</a>');
+            }
+          </script>
+          
+          <style type="text/css">
+            a.example {
+              cursor: pointer;
+            }
+            
+            div#live-context-area {
+              border: 2px solid black;
+              padding: 10px;
+              border-radius: 10px;
+            }
+          </style>
+          
+          <header>
+        		<h1>Contexts lead to Performance Gain</h1>
+        	</header>
+        	<section>
+            <pre>
+$('a.example', $('#live-context-area')[0]).live('click', function() { 
+  show( 'Hello', 'live-context-console'); 
+});
+            </pre>
+            <button onclick="addLiveContext()">New Anchor</button>
+            <div id="live-context-area">
+              <a class="example">Example Anchor</a>
+            </div>
+            <div id="non-live-context-area">
+              <a class="example">Won't work!</a>
+            </div>
+            <div id="live-context-console">
+            </div>
+        	</section>
+        </div>
+
+        <div class="slide">
+          <section class="intro center">
+            <hgroup>
+              <h1>That's it for $.live()</h1>
+              <br />
+              <h1>On to Setters!</h1>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide">
+        	<header>
+        		<h1>Improvements to Setter Functions</h1>
+        	</header>
+          <section>
+          	<ul class="bullets">
+          		<li>Setter functions have been around since the beginning</li>
+          		<li>Includes things like .html(...) .val(...) .attr('something', '...')</li>
+          		<li>jQuery 1.4 changes the API to make them more versatile and powerful</li>  
+          	</ul>
+          	<hr />
+          	<div>Let's look at an example!</div>
+          </section>
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>Old 1.3 Way</h1>
+          </header>
+          <section>
+            <pre>
+$('a.setter').attr('href', function() {
+  var newhref = $(this).attr('href') + '?' + new Date();
+  $(this).attr('href', newhref);                        
+});
+            </pre>
+          </section>
+        </div>
+        
+      </div> 
+    </div> 
+
+    
+    <script>
+      (function() {
+        // Since we don't have the fallback of attachEvent and
+        // other IE only stuff we won't try to run JS for IE.
+        // It will run though when using Google Chrome Frame
+        if (document.all) { return; }
+
+        var currentSlideNo;
+        var notesOn = false;
+        var slides = document.getElementsByClassName('slide');
+        var touchStartX = 0;     
+   
+        // var slide_hash = window.location.hash.replace(/#/, '');
+        // if (slide_hash) {
+        //   for (var i = 0, len = slides.length; i < len; i++) {
+        //     if (slides[i].id == slide_hash) {
+        //       currentSlideNo = i;
+        //       updateSlideClasses(); 
+        //     }
+        //   }
+        // }
+        
+        var spaces = /\s+/, a1 = [""];
+
+        var str2array = function(s) {
+          if (typeof s == "string" || s instanceof String) {
+            if (s.indexOf(" ") < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+
+        var trim = function(str) {
+          return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        };
+
+        var addClass = function(node, classStr) {
+          classStr = str2array(classStr);
+          var cls = " " + node.className + " ";
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(" " + c + " ") < 0) {
+              cls += c + " ";
+            }
+          }
+          node.className = trim(cls);
+        };
+
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = str2array(classStr);
+            cls = " " + node.className + " ";
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(" " + classStr[i] + " ", " ");
+            }
+            cls = trim(cls);
+          } else {
+            cls = "";
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+
+        var getSlideEl = function(slideNo) {
+          if (slideNo > 0) {
+            return slides[slideNo - 1];
+          } else {
+            return null;
+          }
+        };
+
+        var getSlideTitle = function(slideNo) {
+          var el = getSlideEl(slideNo);
+          
+          if (el) {
+            return el.getElementsByTagName('header')[0].innerHTML;
+          } else {
+            return null;
+          }
+        };
+        
+        var changeSlideElClass = function(slideNo, className) {
+          var el = getSlideEl(slideNo);
+
+          if (el) {
+            removeClass(el, 'far-past past current future far-future');
+            addClass(el, className);
+          }
+        };
+        
+        var updateSlideClasses = function() {
+          window.location.hash = "slide" + currentSlideNo;
+          changeSlideElClass(currentSlideNo - 2, 'far-past');
+          changeSlideElClass(currentSlideNo - 1, 'past');
+          changeSlideElClass(currentSlideNo, 'current');
+          changeSlideElClass(currentSlideNo + 1, 'future');
+          changeSlideElClass(currentSlideNo + 2, 'far-future');                
+        };
+        
+        var nextSlide = function() {
+          if (currentSlideNo < slides.length) {
+            currentSlideNo++;
+          }
+          
+          updateSlideClasses();
+        };
+        
+        var prevSlide = function() {
+          if (currentSlideNo > 1) {
+            currentSlideNo--;
+          }
+          updateSlideClasses();
+        };
+        
+        var showNotes = function() {
+          var notes = document.querySelectorAll('.notes');
+          for (var i = 0, len = notes.length; i < len; i++) {
+            notes[i].style.display = (notesOn) ? 'none':'block';
+          }
+          notesOn = (notesOn) ? false:true;
+        };
+
+        var switch3D = function() {
+          if (document.body.className.indexOf('three-d') == -1) {
+            document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+            document.body.className += ' three-d';
+          } else {
+            window.setTimeout("document.getElementsByClassName('presentation')[0].style.webkitPerspective = '0';", 2000);
+            document.body.className = document.body.className.replace(/three-d/, '');
+          }
+        };
+
+        var handleBodyKeyDown = function(event) {
+          // console.log(event.keyCode);
+          switch (event.keyCode) {
+            case 37: // left arrow
+              prevSlide();
+              break;
+            case 39: // right arrow
+            // case 32: // space
+              nextSlide();
+              break;
+            case 50: // 2
+              showNotes();          
+              break;
+            case 51: // 3
+              switch3D();          
+              break;
+          }
+        };
+
+        var addTouchListeners = function() {
+          document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX;
+          }, false);
+          document.addEventListener('touchend', function(e) {
+            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (pixelsMoved > SWIPE_SIZE) {
+              nextSlide();
+            }
+            else if (pixelsMoved < -SWIPE_SIZE) {
+             prevSlide();
+            }
+          }, false);
+        };
+
+        // initialize
+
+        (function() {
+          if (window.location.hash != "") {
+            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+          } else {
+            currentSlideNo = 1;
+          }
+   
+          document.addEventListener('keydown', handleBodyKeyDown, false);
+   
+          var els = slides;
+          for (var i = 0, el; el = els[i]; i++) {
+            addClass(el, 'slide far-future');
+          }
+          updateSlideClasses(); 
+
+          // add support for finger events (filter it by property detection?)
+          addTouchListeners();
+        })();
+      })();
+    </script>
+
+    <!--[if IE]>
+		<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script> 
+		<script>CFInstall.check({ mode: "overlay" });</script> 
+    <![endif]--> 
+</body>
+</html>
