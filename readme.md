@@ -18,6 +18,4 @@ This is an HTML5 Presentation given at Stir Trek 2: Iron Man Edition by Matt Now
   limitations under the License.
  
   Original slides: Marcin Wichary (mwichary@google.com)
-  Modifications: Ernest Delgado (ernestd@google.com)
-                 Alex Russell (slightlyoff@chromium.org)
-                 Matthew Nowack (mdnowack@gmail.com) 
+  Modifications: Ernest Delgado (ernestd@google.com), Alex Russell (slightlyoff@chromium.org), Matthew Nowack (mdnowack@gmail.com) 
